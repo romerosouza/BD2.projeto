@@ -3,6 +3,7 @@ import java.util.List;
 
 
 public class Projeto {
+	private int idProjeto;
 	private Professor responsavel;
 	private String titulo;
 	private String descricao;
@@ -22,6 +23,10 @@ public class Projeto {
 		alunos = new ArrayList<Aluno>();
 		tecnologias = new ArrayList<Tecnologia>();
 		this.responsavel = responsavel;
+	}
+
+	public int getIdProjeto() {
+		return idProjeto;
 	}
 
 	public String getDataFim() {

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+<hibernate-configuration> 
+<session-factory> 
+			<!--  Driver do BD -->
+			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property> 
+			<!--  String de Conexão do BD -->
+			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/cadastrodepessoas</property> 
+			<!--  Usuário do BD -->
+			<property name="hibernate.connection.username">postgres</property> 
+			<!--  Senha do BD -->
+			<property name="hibernate.connection.password">123456</property> 
+			<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> 
+			<!--  atualiza o banco, gera as tabelas se for preciso -->
+			<property name="hibernate.hbm2ddl.auto">update</property>
+			<property name="hibernate.connection.shutdown">true</property>
+			
+			<!--  
+			Mapea as classes que serão utilizadas como tabela
+			Ex:
+			<mapping class="Pessoa"/>
+			<mapping class="Endereco"/>	
+			<mapping class="Telefone"/>			
+			 -->
+</session-factory> 
+</hibernate-configuration>
+
+
+
+
+
+			<!-- 
+			<property name="hibernate.show_sql">true</property>
+			<property name="hibernate.format_sql">true</property>
+  			
+  			 -->
+			
+  		

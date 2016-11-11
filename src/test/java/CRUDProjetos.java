@@ -8,7 +8,7 @@ public class CRUDProjetos {
 	@Test
 	public void test() {
 		
-		GerenteDeProjetos gerente = GerenteDeProjetos.getInstancia();
+		GerenteDeProjetosDAO gerente = GerenteDeProjetosFactory.criaInstancia(Persistencia.JDBC);
 		
 		Professor adriano = new Professor("Adriano Santos");
 		Professor bruno = new Professor("Bruno de Brito");
@@ -19,20 +19,17 @@ public class CRUDProjetos {
 		bruno.getProjeto().addTecnologias(new Tecnologia("Git", "Git na prática", "link", "descricao"));
 		
 		//Adicionar projeto
-		gerente.addProjeto(adriano.getProjeto());
-		gerente.addProjeto(bruno.getProjeto());
+		gerente.adicionarProjeto(adriano.getProjeto());
+		gerente.adicionarProjeto(bruno.getProjeto());
 		
+		assertEquals(gerente.getProjeto(0).getResponsavel().getNome(), "Adriano Santos");
+		assertEquals(gerente.getProjeto(0).getResponsavel().isOcupado(), true);
 		//Listar projetos
-		gerente.getProjetos();
-		//System.out.println(gerente.getProjetos());
+		System.out.println(gerente.getTodosProjetos());
 		
-		gerente.getProjetosIndice();
+		System.out.println(gerente.getProjeto(1));
 		
 		gerente.removeProjeto(0);
-		//System.out.println(gerente.getProjetos());
-		gerente.getProjetosIndice();
-		//Editar Projeto
-		gerente.editarProjeto(0);
 
 	}
 
