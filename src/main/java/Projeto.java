@@ -3,30 +3,54 @@ import java.util.List;
 
 
 public class Projeto {
+	
 	private int idProjeto;
-	private Professor responsavel;
 	private String titulo;
 	private String descricao;
+	private Professor responsavel;
 	private String dataInicio;
 	private String dataFim;
 	private Area area;
-	private List<String> links;
-	private List<Aluno> alunos;
-	private List<Tecnologia> tecnologias;
+	private List <Link> linkes;
+	private List <Aluno> alunos;
+	private List <Tecnologia> tecnologias;
 	
-	public Projeto(String titulo, String descricao, String dataInicio, Area area, Professor responsavel) {
+	public Projeto(int idProjeto,Professor responsavel, String titulo, String descricao, String dataInicio, String dataFim, Area area) {
+		
+		this.idProjeto = idProjeto;
+		this.responsavel = responsavel;
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
 		this.area = area;
-		links = new ArrayList<String>();
+		linkes = new ArrayList<Link>();
 		alunos = new ArrayList<Aluno>();
 		tecnologias = new ArrayList<Tecnologia>();
-		this.responsavel = responsavel;
 	}
 
-	public int getIdProjeto() {
-		return idProjeto;
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getDataInicio() {
+		return dataInicio;
+	}
+
+	public void setDataInicio(String dataInicio) {
+		this.dataInicio = dataInicio;
 	}
 
 	public String getDataFim() {
@@ -37,59 +61,53 @@ public class Projeto {
 		this.dataFim = dataFim;
 	}
 
-	public List<String> getLink() {
-		return links;
-	}
-
-	public void addLink(String link) {
-		links.add(link);
-	}
-
-	public List<Tecnologia> getTecnologias() {
-		return tecnologias;
-	}
-
-	public void addTecnologias(Tecnologia tecnologia) {
-		tecnologias.add(tecnologia);
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public String getDataInicio() {
-		return dataInicio;
-	}
-
 	public Area getArea() {
 		return area;
 	}
-	
-	public Professor getResponsavel(){
-		return responsavel;
+
+	public void setArea(Area area) {
+		this.area = area;
 	}
 
-	public List<Aluno> getAlunos() {
+	public List<Link> getLink() {
+		return linkes;
+	}
+
+	public void addLink(Link link) {
+		linkes.add(link);
+	}
+
+	public List<Aluno> getAluno() {
 		return alunos;
 	}
-	public void addAluno(Aluno aluno){
-		if (aluno.getPeiriodo() < 4){
-			System.out.println("Necess·rio no mÌnimo 4o perÌodo");
-		}else{
-			alunos.add(aluno);
-		}	
+
+	public void addAluno(Aluno aluno) {
+		alunos.add(aluno);
+	}
+
+	public List<Tecnologia> getTecnologia() {
+		return tecnologias;
+	}
+
+	public void addTecnologia(Tecnologia tecnologia) {
+		tecnologias.add(tecnologia);
+	}
+
+	public int getIdProjeto() {
+		return idProjeto;
+	}
+
+	public String getResponsavel() {
+		return responsavel.getNome();
 	}
 
 	@Override
 	public String toString() {
-		return "Projeto " + this.titulo + "\nResponsavel: " + responsavel.getNome() + "\nTitulo: " + titulo
-				+ "\nDescricao: " + descricao + "\nData Inicio: " + dataInicio
-				+ "\nData Fim: " + dataFim + "\n¡rea: " + area + "\nLinks: "
-				+ links + "\nAlunos Participantes: " + alunos + "\nTecnologias: " + tecnologias + "\n\n";
+		return "Projeto [idProjeto=" + idProjeto + ", titulo=" + titulo
+				+ ", descricao=" + descricao + ", responsavel=" + responsavel.getNome()
+				+ ", dataInicio=" + dataInicio + ", dataFim=" + dataFim
+				+ ", area=" + area + ", link=" + linkes + ", aluno=" + alunos
+				+ ", tecnologia=" + tecnologias + "]";
 	}
 	
 }

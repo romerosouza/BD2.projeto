@@ -1,36 +1,31 @@
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListGerenteDeProjetosDAO implements GerenteDeProjetosDAO {
+public class HibernateGerenteDeProjetosDAO implements GerenteDeProjetosDAO{
 
-	private List<Projeto> projetos = new ArrayList<Projeto>();
-
-	
 	public void adicionarProjeto(Projeto projeto) {
-		projetos.add(projeto);
-		System.out.println("Projeto adicionado");
-
+		// TODO Auto-generated method stub
+		
 	}
 
 	public Projeto getProjeto(int id) {
 		// TODO Auto-generated method stub
-		return projetos.get(id);
+		return null;
 	}
 
 	public void removeProjeto(int id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void atualizaProjeto(int id, Projeto projeto) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public List<Projeto> getTodosProjetos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 }

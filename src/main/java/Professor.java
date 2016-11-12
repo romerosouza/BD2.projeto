@@ -1,40 +1,46 @@
 
 public class Professor {
+	
+	private int idProfessor;
 	private String nome;
 	private boolean ocupado;
 	private Projeto projeto;
 	
-	public Professor(String nome) {
+	public Professor(int idProfessor, String nome) {
+		this.idProfessor = idProfessor;
 		this.nome = nome;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	public boolean isOcupado() {
 		return ocupado;
 	}
+
 	public void setOcupado(boolean ocupado) {
 		this.ocupado = ocupado;
 	}
-	@Override
-	public String toString() {
-		return "Professor [Nome: " + nome + " Ocupado: " + ocupado + "]";
+
+	public int getIdProfessor() {
+		return idProfessor;
 	}
-	
-	public void criarProjeto(String titulo, String descricao, String dataInicio, Area area){
-		if (this.ocupado){
-			System.out.println("O professor encontra-se ocupado!!");
-		}else{
-			Projeto projeto = new Projeto(titulo, descricao, dataInicio, area, this);
-			this.setOcupado(true);
-			this.projeto = projeto;
-		}	
+
+	public String getNome() {
+		return nome;
 	}
 	
 	public Projeto getProjeto(){
 		return projeto;
 	}
+	
+	public void criarProjeto(int idProjeto, String titulo, String descricao, String dataInicio, String dataFim, Area area){
+		Projeto projeto = new Projeto(idProjeto, this, titulo, descricao, dataInicio, dataFim, area);
+		this.setOcupado(true);
+		this.projeto = projeto;
+	}
+	
+	@Override
+	public String toString() {
+		return "Professor [idProfessor=" + idProfessor + ", nome=" + nome
+				+ ", ocupado=" + ocupado + "]";
+	}
+	
 }
