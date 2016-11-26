@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+import moldel.Aluno;
 import moldel.Projeto;
+import moldel.Tecnologia;
 import connection.FabricaDeConexoes;
 
 
@@ -33,15 +35,17 @@ public class GerenteJDBC implements GerenteDAO {
 			
 			System.out.println("carregou o stm");
 			
-			stm.execute();
+			stm.executeUpdate();
 			
 			System.out.println("executou o stm");
 
-			c.close();
+			
 			
 		}catch(Exception e){
-			//e.printStackTrace();
+			e.printStackTrace();
 			System.out.println("***Erro ao conectar***");
+		}finally{
+			FabricaDeConexoes.fechaConexao();
 		}
 	}
 
@@ -76,6 +80,21 @@ public class GerenteJDBC implements GerenteDAO {
 	}
 
 	public Projeto getProjetoResponsavel(String professor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Tecnologia getTecnologia(String titulo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Projeto> getProjetoAluno(int matricula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Aluno> getAlunosProjeto(String tituloProjeto) {
 		// TODO Auto-generated method stub
 		return null;
 	}

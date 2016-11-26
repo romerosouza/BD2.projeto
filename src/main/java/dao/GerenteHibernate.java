@@ -2,7 +2,9 @@ package dao;
 
 import java.util.List;
 
+import moldel.Aluno;
 import moldel.Projeto;
+import moldel.Tecnologia;
 
 
 public class GerenteHibernate implements GerenteDAO{
@@ -43,6 +45,21 @@ public class GerenteHibernate implements GerenteDAO{
 	}
 
 	public Projeto getProjetoResponsavel(String professor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Tecnologia getTecnologia(String titulo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Projeto> getProjetoAluno(int matricula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Aluno> getAlunosProjeto(String tituloProjeto) {
 		// TODO Auto-generated method stub
 		return null;
 	}

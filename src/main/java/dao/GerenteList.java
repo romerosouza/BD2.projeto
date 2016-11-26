@@ -3,7 +3,11 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Index;
+
+import moldel.Aluno;
 import moldel.Projeto;
+import moldel.Tecnologia;
 
 
 public class GerenteList implements GerenteDAO {
@@ -60,6 +64,39 @@ public class GerenteList implements GerenteDAO {
 				return projeto;
 			}
 		}
+		return null;
+	}
+
+	public Tecnologia getTecnologia(String titulo) {
+		Tecnologia tec;
+		for (int i = 0; i < projetos.size(); i++) {
+			for (int j = 0; j < projetos.get(i).getTecnologia().size(); j++) {
+				if(projetos.get(i).getTecnologia().get(j).getNome() == titulo){
+					tec = projetos.get(i).getTecnologia().get(j);
+					return tec;
+				}
+			}
+		}
+		return null;
+	}
+
+	public List<Projeto> getProjetoAluno(int matricula) {
+		List<Projeto> proj;
+		proj = new ArrayList<Projeto>();
+		
+		for (int i = 0; i < projetos.size(); i++) {
+			for (int j = 0; j < projetos.get(i).getAluno().size(); j++) {
+				if(projetos.get(i).getAluno().get(j).getMatricula() == matricula){
+					proj.add(i, projetos.get(j));
+				}
+			}
+		}
+
+		return null;
+	}
+
+	public List<Aluno> getAlunosProjeto(String tituloProjeto) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

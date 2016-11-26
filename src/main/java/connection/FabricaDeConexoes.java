@@ -6,22 +6,24 @@ import java.sql.SQLException;
 
 public class FabricaDeConexoes {
 
-	private static String dsn = "jdbc:postgresql://localhost:5432/projetosfacisa";
-	private static String user = "postgres";
-	private static String psw = "123";
+	private static final String DRIVER = "org.postgresql.Driver";
+	private static final String URL = "jdbc:postgresql://localhost:5432/projetosfacisa";
+	private static final String USER = "postgres";
+	private static final String PSW = "123";
 	
 	private static Connection conexao;
 	
 	public static Connection getConexao() throws Exception{
+		
 		if (conexao == null){
 			try {
-				Class.forName("org.postgresql.Driver");
-				conexao = DriverManager.getConnection(dsn, user, psw);
-				System.out.println("Conexão estabelecida!");
+				Class.forName(DRIVER);
+				return DriverManager.getConnection(URL, USER, PSW);
+				
             } catch (SQLException e) {
-                System.out.println("Houve um erro ao conectar com o Banco de Dados.");
+            	throw new RuntimeException("Houve um erro ao conectar com o Banco de Dados.", e);
             }catch (ClassNotFoundException e) {
-            	System.out.println("Não há banco de dados.");
+            	throw new RuntimeException("Não há banco de dados.", e);
 			}
 		}
 		return conexao;
