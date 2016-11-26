@@ -1,14 +1,12 @@
 public class Aluno {
-	private String matricula;
+	private int matricula;
 	private String nome;
 	private int peiriodo;
-	private int idProjeto;
 	
-	public Aluno(String matricula, String nome, int peiriodo, int idProjeto) {
+	public Aluno(int matricula, String nome, int peiriodo) {
 		this.matricula = matricula;
 		this.nome = nome;
 		this.peiriodo = peiriodo;
-		this.idProjeto = idProjeto;
 	}
 
 	public int getPeiriodo() {
@@ -19,15 +17,7 @@ public class Aluno {
 		this.peiriodo = peiriodo;
 	}
 
-	public int getIdProjeto() {
-		return idProjeto;
-	}
-
-	public void setIdProjeto(int idProjeto) {
-		this.idProjeto = idProjeto;
-	}
-
-	public String getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
 
@@ -38,7 +28,7 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno [matricula=" + matricula + ", nome=" + nome
-				+ ", peiriodo=" + peiriodo + ", idProjeto=" + idProjeto + "]";
+				+ ", peiriodo=" + peiriodo + "]";
 	}
 		
 }

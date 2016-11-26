@@ -82,7 +82,11 @@ public class Projeto {
 	}
 
 	public void addAluno(Aluno aluno) {
-		alunos.add(aluno);
+		if (aluno.getPeiriodo() < 4){
+			System.out.println("O aluno não pode participar");
+		}else{
+			alunos.add(aluno);
+		}	
 	}
 
 	public List<Tecnologia> getTecnologia() {
@@ -97,8 +101,8 @@ public class Projeto {
 		return idProjeto;
 	}
 
-	public String getResponsavel() {
-		return responsavel.getNome();
+	public Professor getResponsavel() {
+		return responsavel;
 	}
 
 	@Override

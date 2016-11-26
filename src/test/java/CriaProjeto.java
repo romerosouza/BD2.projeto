@@ -15,7 +15,7 @@ public class CriaProjeto {
 		assertEquals(adriano.isOcupado(), true);
 		assertEquals(bruno.isOcupado(), false);
 		System.out.println(adriano.getProjeto());
-		assertEquals(adriano.getProjeto().getResponsavel(), "Adriano");
+		assertEquals(adriano.getProjeto().getResponsavel().getNome(), "Adriano");
 		
 	}
 

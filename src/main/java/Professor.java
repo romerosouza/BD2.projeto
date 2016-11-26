@@ -1,13 +1,13 @@
 
 public class Professor {
 	
-	private int idProfessor;
+	private int matricula;
 	private String nome;
 	private boolean ocupado;
 	private Projeto projeto;
 	
-	public Professor(int idProfessor, String nome) {
-		this.idProfessor = idProfessor;
+	public Professor(int matricula, String nome) {
+		this.matricula = matricula;
 		this.nome = nome;
 	}
 	
@@ -20,7 +20,7 @@ public class Professor {
 	}
 
 	public int getIdProfessor() {
-		return idProfessor;
+		return matricula;
 	}
 
 	public String getNome() {
@@ -39,7 +39,7 @@ public class Professor {
 	
 	@Override
 	public String toString() {
-		return "Professor [idProfessor=" + idProfessor + ", nome=" + nome
+		return "Professor [idProfessor=" + matricula + ", nome=" + nome
 				+ ", ocupado=" + ocupado + "]";
 	}
 	

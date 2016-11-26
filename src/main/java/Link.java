@@ -1,12 +1,10 @@
 public class Link {
 	private int idLink;
 	private String link;
-	private int idProjeto;
 	
-	public Link(int idLink, String link, int idProjeto) {
+	public Link(int idLink, String link) {
 		this.idLink = idLink;
 		this.link = link;
-		this.idProjeto = idProjeto;
 	}
 
 	public String getLink() {
@@ -19,10 +17,6 @@ public class Link {
 
 	public int getIdLink() {
 		return idLink;
-	}
-
-	public int getIdProjeto() {
-		return idProjeto;
 	}
 
 	@Override

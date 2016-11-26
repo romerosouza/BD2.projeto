@@ -14,23 +14,21 @@ public class ListGerenteDeProjetosDAO implements GerenteDeProjetosDAO {
 	}
 
 	public Projeto getProjeto(int id) {
-		// TODO Auto-generated method stub
 		return projetos.get(id);
 	}
 
 	public void removeProjeto(int id) {
-		// TODO Auto-generated method stub
+		projetos.remove(id);
 
 	}
 
 	public void atualizaProjeto(int id, Projeto projeto) {
-		// TODO Auto-generated method stub
+		projetos.add(id, projeto);
 
 	}
 
 	public List<Projeto> getTodosProjetos() {
-		// TODO Auto-generated method stub
-		return null;
+		return projetos;
 	}
 
 }

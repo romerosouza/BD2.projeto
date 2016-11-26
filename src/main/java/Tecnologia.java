@@ -5,15 +5,13 @@ public class Tecnologia {
 	private String titulo;
 	private String link;
 	private String descricao;
-	private int idProjeto;
 	
-	public Tecnologia(int idTecnologia, String nome, String titulo, String link, String descricao, int idProjeto) {
+	public Tecnologia(int idTecnologia, String nome, String titulo, String link, String descricao) {
 		this.idTecnologia = idTecnologia;
 		this.nome = nome;
 		this.titulo = titulo;
 		this.link = link;
 		this.descricao = descricao;
-		this.idProjeto = idProjeto;
 	}
 
 	public String getLink() {
@@ -30,14 +28,6 @@ public class Tecnologia {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public int getIdProjeto() {
-		return idProjeto;
-	}
-
-	public void setIdProjeto(int idProjeto) {
-		this.idProjeto = idProjeto;
 	}
 
 	public int getIdTecnologia() {
