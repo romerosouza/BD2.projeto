@@ -1,9 +1,12 @@
+package dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import moldel.Projeto;
 
-public class ListGerenteDeProjetosDAO implements GerenteDAO {
+
+public class GerenteList implements GerenteDAO {
 
 	private List<Projeto> projetos = new ArrayList<Projeto>();
 

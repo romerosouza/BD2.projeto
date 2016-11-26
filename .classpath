@@ -33,7 +33,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="D:/OneDrive/FACISA/2016.2/BD2/postgresql-9.1-901-1.jdbc4.jar"/>
-	<classpathentry kind="lib" path="D:/OneDrive/FACISA/2016.2/BD2/postgresql-9.4.1211.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/postgresql-9.1-901-1.jdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Romero/Downloads/postgresql-9.1-901-1.jdbc4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,6 +1,9 @@
+package dao;
 
 
 import java.util.List;
+
+import moldel.Projeto;
 
 
 public interface GerenteDAO {

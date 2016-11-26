@@ -1,3 +1,4 @@
+package moldel;
 public class Link {
 	private int idLink;
 	private String link;

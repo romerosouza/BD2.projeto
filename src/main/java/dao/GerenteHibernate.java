@@ -1,8 +1,11 @@
+package dao;
 
 import java.util.List;
 
+import moldel.Projeto;
 
-public class HibernateGerenteDeProjetosDAO implements GerenteDAO{
+
+public class GerenteHibernate implements GerenteDAO{
 
 	public void adicionarProjeto(Projeto projeto) {
 		// TODO Auto-generated method stub

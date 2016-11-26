@@ -1,10 +1,14 @@
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+import moldel.Projeto;
+import connection.FabricaDeConexoes;
 
-public class JDBCGerenteDeProjetosDAO implements GerenteDAO {
+
+public class GerenteJDBC implements GerenteDAO {
 
 	public void adicionarProjeto(Projeto projeto) {
 		
@@ -41,11 +45,6 @@ public class JDBCGerenteDeProjetosDAO implements GerenteDAO {
 		}
 	}
 
-	public Projeto getProjeto(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void removeProjeto(int id) {
 		// TODO Auto-generated method stub
 		
@@ -57,11 +56,6 @@ public class JDBCGerenteDeProjetosDAO implements GerenteDAO {
 	}
 
 	public List<Projeto> getTodosProjetos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Projeto getProjeto(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

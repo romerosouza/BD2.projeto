@@ -1,3 +1,4 @@
+package moldel;
 
 public class Aluno {
 	private int matricula;
