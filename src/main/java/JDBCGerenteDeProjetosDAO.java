@@ -1,9 +1,10 @@
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
 
 
-public class JDBCGerenteDeProjetosDAO implements GerenteDeProjetosDAO {
+public class JDBCGerenteDeProjetosDAO implements GerenteDAO {
 
 	public void adicionarProjeto(Projeto projeto) {
 		
@@ -56,6 +57,16 @@ public class JDBCGerenteDeProjetosDAO implements GerenteDeProjetosDAO {
 	}
 
 	public List<Projeto> getTodosProjetos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Projeto getProjeto(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Projeto getProjeto(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

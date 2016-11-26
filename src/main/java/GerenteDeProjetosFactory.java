@@ -1,14 +1,15 @@
 
 
+
 public class GerenteDeProjetosFactory {
 	
-	public static GerenteDeProjetosDAO criaInstancia(Implementacao imp){
+	public static GerenteDAO criaInstancia(Implementacao imp){
 		
-		if(imp.name().equals("lista")){
+		if(imp == Implementacao.lista){
 			System.out.println("testes lista");
 			return new ListGerenteDeProjetosDAO();
 			
-		}if (imp.name().equals("JDBC")){
+		}if (imp == Implementacao.JDBC){
 			System.out.println("testes jdbc");
 			return new JDBCGerenteDeProjetosDAO();
 			

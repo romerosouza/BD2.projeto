@@ -1,8 +1,9 @@
 
+
 import java.util.List;
 
 
-public interface GerenteDeProjetosDAO {
+public interface GerenteDAO {
 	
 	public void adicionarProjeto(Projeto projeto);
 	public Projeto getProjeto(int id);

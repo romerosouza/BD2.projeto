@@ -1,7 +1,8 @@
+
 import java.util.List;
 
 
-public class HibernateGerenteDeProjetosDAO implements GerenteDeProjetosDAO{
+public class HibernateGerenteDeProjetosDAO implements GerenteDAO{
 
 	public void adicionarProjeto(Projeto projeto) {
 		// TODO Auto-generated method stub

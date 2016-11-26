@@ -8,7 +8,7 @@ public class TesteGereneteDeProjetos {
 	@Test
 	public void test() {
 		
-		GerenteDeProjetosDAO g1 = GerenteDeProjetosFactory.criaInstancia(Implementacao.JDBC);
+		GerenteDAO g1 = GerenteDeProjetosFactory.criaInstancia(Implementacao.JDBC);
 		Professor romero = new Professor(1, "Romero");
 		//Professor bruno = new Professor(2, "Bruno");
 		//bruno.criarProjeto(2, "titulo 2", "descricao2", "dataInicio", "dataFim", Area.IA);

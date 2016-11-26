@@ -1,8 +1,9 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListGerenteDeProjetosDAO implements GerenteDeProjetosDAO {
+public class ListGerenteDeProjetosDAO implements GerenteDAO {
 
 	private List<Projeto> projetos = new ArrayList<Projeto>();
 
