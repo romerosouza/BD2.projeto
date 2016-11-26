@@ -113,7 +113,7 @@ public class Projeto {
 				+ ", descricao=" + descricao + ", responsavel=" + responsavel.getNome()
 				+ ", dataInicio=" + dataInicio + ", dataFim=" + dataFim
 				+ ", area=" + area + ", link=" + linkes + ", aluno=" + alunos
-				+ ", tecnologia=" + tecnologias + "]";
+				+ ", tecnologia=" + tecnologias + "]\n";
 	}
 	
 }

@@ -16,15 +16,13 @@ public class GerenteList implements GerenteDAO {
 			System.out.println("Não é possível cadastrar um projeto sem tecnologia");
 		}else{
 			projetos.add(projeto);
-			System.out.println("Projeto adicionado");
+			System.out.println("Projeto " +projeto.getTitulo() + " adicionado");
 		}	
 	}
 
-	public Projeto getProjeto(int id) {
-		return projetos.get(id);
-	}
-
 	public void removeProjeto(int id) {
+		projetos.get(id).getResponsavel().setOcupado(false);
+		projetos.get(id).getResponsavel().removeProjeto(null);
 		projetos.remove(id);
 
 	}
@@ -36,6 +34,33 @@ public class GerenteList implements GerenteDAO {
 
 	public List<Projeto> getTodosProjetos() {
 		return projetos;
+	}
+
+	public Projeto getProjetoTitulo(String titulo) {
+		for (Projeto projeto : projetos) {
+			if (projeto.getTitulo()== titulo){
+				return projeto;
+			}
+		}
+		return null;
+	}
+	
+	public Projeto getProgetoData(String data) {
+		for (Projeto projeto : projetos) {
+			if (projeto.getDataInicio()== data){
+				return projeto;
+			}
+		}
+		return null;
+	}
+
+	public Projeto getProjetoResponsavel(String professor) {
+		for (Projeto projeto : projetos) {
+			if (projeto.getResponsavel().getNome()== professor){
+				return projeto;
+			}
+		}
+		return null;
 	}
 
 }

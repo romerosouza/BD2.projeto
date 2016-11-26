@@ -31,5 +31,20 @@ public class GerenteHibernate implements GerenteDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Projeto getProjetoTitulo(String titulo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Projeto getProgetoData(String data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Projeto getProjetoResponsavel(String professor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

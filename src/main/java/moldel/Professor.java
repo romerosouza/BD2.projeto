@@ -1,8 +1,8 @@
 package moldel;
 
+import dao.ProfessorDAO;
 
-
-public class Professor {
+public class Professor implements ProfessorDAO{
 	
 	private int matricula;
 	private String nome;
@@ -33,21 +33,41 @@ public class Professor {
 	public Projeto getProjeto(){
 		return projeto;
 	}
-	
-	public void criarProjeto(int idProjeto, String titulo, String descricao, String dataInicio, String dataFim, Area area){
+
+	public void removeProjeto(Projeto projeto){
+		this.projeto = null;
+	}
+
+	public void criarProjeto(Projeto projeto) {
+		// TODO Auto-generated method stub
 		if (isOcupado()){
 			System.out.println("O professor " + this.nome + " já participa de um projeto");
 		}else{
-			Projeto projeto = new Projeto(idProjeto, this, titulo, descricao, dataInicio, dataFim, area);
 			this.setOcupado(true);
 			this.projeto = projeto;
 		}	
 	}
+
+	public void addAluno(Aluno aluno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addTecnologia(Tecnologia tecnologia) {
+		// TODO Auto-generated method stub
+		projeto.addTecnologia(tecnologia);
+		
+	}
+
+	public void addLink(Link link) {
+		// TODO Auto-generated method stub
+		projeto.addLink(link);
+	}
+
 	
 	@Override
 	public String toString() {
 		return "Professor [idProfessor=" + matricula + ", nome=" + nome
 				+ ", ocupado=" + ocupado + "]";
 	}
-	
 }
