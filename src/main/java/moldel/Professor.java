@@ -35,9 +35,13 @@ public class Professor {
 	}
 	
 	public void criarProjeto(int idProjeto, String titulo, String descricao, String dataInicio, String dataFim, Area area){
-		Projeto projeto = new Projeto(idProjeto, this, titulo, descricao, dataInicio, dataFim, area);
-		this.setOcupado(true);
-		this.projeto = projeto;
+		if (isOcupado()){
+			System.out.println("O professor " + this.nome + " já participa de um projeto");
+		}else{
+			Projeto projeto = new Projeto(idProjeto, this, titulo, descricao, dataInicio, dataFim, area);
+			this.setOcupado(true);
+			this.projeto = projeto;
+		}	
 	}
 	
 	@Override

@@ -12,9 +12,12 @@ public class GerenteList implements GerenteDAO {
 
 	
 	public void adicionarProjeto(Projeto projeto) {
-		projetos.add(projeto);
-		System.out.println("Projeto adicionado");
-
+		if (projeto.getTecnologia().isEmpty()){
+			System.out.println("Não é possível cadastrar um projeto sem tecnologia");
+		}else{
+			projetos.add(projeto);
+			System.out.println("Projeto adicionado");
+		}	
 	}
 
 	public Projeto getProjeto(int id) {
