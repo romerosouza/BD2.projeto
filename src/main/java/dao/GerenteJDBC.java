@@ -11,6 +11,8 @@ import connection.FabricaDeConexoes;
 
 
 public class GerenteJDBC implements GerenteDAO {
+	
+	public GerenteJDBC(){}
 
 	public void adicionarProjeto(Projeto projeto) {
 		
@@ -19,9 +21,11 @@ public class GerenteJDBC implements GerenteDAO {
 			
 			System.out.println("pegou conexão");
 			
-			String sql = ("insert into projetos (idprojeto, titulo, descricao, datainicio, datafim, area, matriculaprofessor) values (?, ?, ?, ?, ?, ?, ?)");
+			String sqlProjeto = ("insert into projetos (idprojeto, titulo, descricao, datainicio, datafim, area, matriculaprofessor) values (?, ?, ?, ?, ?, ?, ?)");
+			String sqlTecnologia = ("insert into tecnologias (idtecnologia, nome, titulo, link, descricao, idprojeto) values (?, ?, ?, ?, ?, ?)");
 			
-			PreparedStatement stm = c.prepareStatement(sql);
+			
+			PreparedStatement stm = c.prepareStatement(sqlProjeto);
 			
 			System.out.println("Preparou o statment");
 			
@@ -34,6 +38,7 @@ public class GerenteJDBC implements GerenteDAO {
 			stm.setInt(7, projeto.getResponsavel().getIdProfessor());
 			
 			System.out.println("carregou o stm");
+			System.out.println(sqlProjeto);
 			
 			stm.executeUpdate();
 			
@@ -50,7 +55,19 @@ public class GerenteJDBC implements GerenteDAO {
 	}
 
 	public void removeProjeto(int id) {
-		// TODO Auto-generated method stub
+		try {
+			Connection c = FabricaDeConexoes.getConexao();
+			String sql = "delete from projetos where idprojeto = ?";
+			PreparedStatement pst = c.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("***Erro ao conectar***");
+		}finally{
+			FabricaDeConexoes.fechaConexao();
+		}
 		
 	}
 

@@ -7,11 +7,11 @@
 			<!--  Driver do BD -->
 			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property> 
 			<!--  String de Conexão do BD -->
-			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/cadastrodepessoas</property> 
+			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/projetosfacisa</property> 
 			<!--  Usuário do BD -->
 			<property name="hibernate.connection.username">postgres</property> 
 			<!--  Senha do BD -->
-			<property name="hibernate.connection.password">123456</property> 
+			<property name="hibernate.connection.password">123</property> 
 			<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> 
 			<!--  atualiza o banco, gera as tabelas se for preciso -->
 			<property name="hibernate.hbm2ddl.auto">update</property>
@@ -20,9 +20,10 @@
 			<!--  
 			Mapea as classes que serão utilizadas como tabela
 			Ex:
-			<mapping class="Pessoa"/>
-			<mapping class="Endereco"/>	
-			<mapping class="Telefone"/>			
+			<mapping class="Aluno"/>
+			<mapping class="Professor"/>	
+			<mapping class="Projeto"/>
+			<mapping class="Tecnologia"/>			
 			 -->
 </session-factory> 
 </hibernate-configuration>
