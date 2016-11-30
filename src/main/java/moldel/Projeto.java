@@ -17,9 +17,9 @@ public class Projeto {
 	private List <Aluno> alunos;
 	private List <Tecnologia> tecnologias;
 	
-	public Projeto(int idProjeto,Professor responsavel, String titulo, String descricao, String dataInicio, String dataFim, Area area) {
+	public Projeto(Professor responsavel, String titulo, String descricao, String dataInicio, String dataFim, Area area) {
 		
-		this.idProjeto = idProjeto;
+		//this.idProjeto = idProjeto;
 		this.responsavel = responsavel;
 		this.titulo = titulo;
 		this.descricao = descricao;
@@ -79,7 +79,7 @@ public class Projeto {
 		linkes.add(link);
 	}
 
-	public List<Aluno> getAluno() {
+	public List<Aluno> getAlunos() {
 		return alunos;
 	}
 
@@ -91,7 +91,7 @@ public class Projeto {
 		}	
 	}
 
-	public List<Tecnologia> getTecnologia() {
+	public List<Tecnologia> getTecnologias() {
 		return tecnologias;
 	}
 

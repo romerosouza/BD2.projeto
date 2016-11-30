@@ -7,7 +7,7 @@
 			<!--  Driver do BD -->
 			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property> 
 			<!--  String de Conexão do BD -->
-			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/projetosfacisa</property> 
+			<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property> 
 			<!--  Usuário do BD -->
 			<property name="hibernate.connection.username">postgres</property> 
 			<!--  Senha do BD -->

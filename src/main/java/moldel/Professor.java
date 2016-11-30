@@ -22,7 +22,7 @@ public class Professor implements ProfessorDAO{
 		this.ocupado = ocupado;
 	}
 
-	public int getIdProfessor() {
+	public int getMatriculaProfessor() {
 		return matricula;
 	}
 

@@ -16,7 +16,7 @@ public class GerenteList implements GerenteDAO {
 
 	
 	public void adicionarProjeto(Projeto projeto) {
-		if (projeto.getTecnologia().isEmpty()){
+		if (projeto.getTecnologias().isEmpty()){
 			System.out.println("Não é possível cadastrar um projeto sem tecnologia");
 		}else{
 			projetos.add(projeto);
@@ -70,9 +70,9 @@ public class GerenteList implements GerenteDAO {
 	public Tecnologia getTecnologia(String titulo) {
 		Tecnologia tec;
 		for (int i = 0; i < projetos.size(); i++) {
-			for (int j = 0; j < projetos.get(i).getTecnologia().size(); j++) {
-				if(projetos.get(i).getTecnologia().get(j).getNome() == titulo){
-					tec = projetos.get(i).getTecnologia().get(j);
+			for (int j = 0; j < projetos.get(i).getTecnologias().size(); j++) {
+				if(projetos.get(i).getTecnologias().get(j).getNome() == titulo){
+					tec = projetos.get(i).getTecnologias().get(j);
 					return tec;
 				}
 			}
@@ -85,8 +85,8 @@ public class GerenteList implements GerenteDAO {
 		proj = new ArrayList<Projeto>();
 		
 		for (int i = 0; i < projetos.size(); i++) {
-			for (int j = 0; j < projetos.get(i).getAluno().size(); j++) {
-				if(projetos.get(i).getAluno().get(j).getMatricula() == matricula){
+			for (int j = 0; j < projetos.get(i).getAlunos().size(); j++) {
+				if(projetos.get(i).getAlunos().get(j).getMatricula() == matricula){
 					proj.add(i, projetos.get(j));
 				}
 			}

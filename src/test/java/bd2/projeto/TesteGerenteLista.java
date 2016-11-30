@@ -27,7 +27,7 @@ public class TesteGerenteLista {
 		
 		//Professor CRIA um projeto
 		
-		p1.criarProjeto(new Projeto(1, p1, "titulo1", "descricao", "dataInicio", "dataFim", Area.BD));
+		p1.criarProjeto(new Projeto(p1, "titulo1", "descricao", "dataInicio", "dataFim", Area.BD));
 		p1.addAluno(new Aluno(123, "nome", 5));
 		p1.addTecnologia(new Tecnologia(123, "Nome", "titulo", "link", "descricao"));
 		p1.addLink(new Link(123, "www.link.com"));
@@ -35,7 +35,7 @@ public class TesteGerenteLista {
 		assertEquals(p1.isOcupado(), true);
 		assertEquals(p2.isOcupado(), false);
 		
-		p2.criarProjeto(new Projeto(2,p2, "titulo2", "descricao", "26/11/2016", "dataFim", Area.Cloud));
+		p2.criarProjeto(new Projeto(p2, "titulo2", "descricao", "26/11/2016", "dataFim", Area.Cloud));
 		p2.addTecnologia(new Tecnologia(2,"MAVEN","titulo2","link","descrição 2"));
 		
 		
@@ -46,9 +46,11 @@ public class TesteGerenteLista {
 		g.adicionarProjeto(p2.getProjeto());
 		
 		assertEquals(g.getProjetoTitulo("titulo1").getResponsavel().getNome(), "Romero");
-		assertEquals(g.getProjetoTitulo("titulo1").getIdProjeto(), 1);
+		assertEquals(g.getProjetoTitulo("titulo1").getIdProjeto(), 0);
 		assertEquals(g.getProjetoTitulo("titulo2").getResponsavel().getNome(), "Adriando");
-		assertEquals(g.getProjetoTitulo("titulo2").getIdProjeto(), 2);
+		assertEquals(g.getProjetoTitulo("titulo2").getIdProjeto(), 0);
+		System.out.println(g.getProjetoTitulo("titulo1").getIdProjeto());
+		System.out.println(g.getProjetoTitulo("titulo2").getIdProjeto());
 		
 		//Remove um projero
 		
@@ -59,7 +61,7 @@ public class TesteGerenteLista {
 		//Atualiza um projeto
 		
 		g.atualizaProjeto(0, p2.getProjeto());
-		assertEquals(g.getProjetoTitulo("titulo2").getIdProjeto(), 2);
+		assertEquals(g.getProjetoTitulo("titulo2").getIdProjeto(), 0);
 		
 		
 		//Lista um projeto
